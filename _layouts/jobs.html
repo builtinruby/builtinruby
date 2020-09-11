@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>{{ page.title }} - {{ site.title }}</title>
+    <link rel="stylesheet" href="{{ "/assets/css/application.css" | relative_url }}">
+  </head>
+  <body data-jobid="{{ page._id }}">
+    <header>
+      {% include navbar.html %}
+    </header>
+
+    <main role="main">
+      <div class="album py-5 bg-light">
+        <div class="container">
+
+          <h1>
+            {{ page.title  }}
+          </h1>
+
+          <p>
+            <strong>Cargo</strong>
+            {{ page.role }}
+          </p>
+          <p>
+            <strong>Empresa</strong>
+            {{ page.organization }}
+          </p>
+          <p>
+            <strong>GitHub</strong>
+            {{ page.github }}
+          </p>
+          <p>
+            <strong>Contato</strong>
+            {{ page.contact }}
+          </p>
+          <p>
+            <strong>Website</strong>
+            {{ page.org_url }}
+          </p>
+          <p>
+            <strong>Tags</strong>
+            {{ page.tags }}
+          </p>
+          <p>
+            <strong>Status</strong>
+            {{ page.status }}
+          </p>
+          <p>
+            <strong>Faixa Salarial</strong>
+            {{ page.rate }}
+          </p>
+          <p>
+            <strong>Data da Publicação</strong>
+            {{ page.date_posted }}
+          </p>
+
+          <h2>Descrição</h2>
+          <p>{{ page.description }}</p>
+
+          <h2>Como se candidatar?</h2>
+          <p>{{ page.how_to_apply }}</p>
+        </div>
+      </div>
+    </main>
+
+    {% include footer.html %}
+  </body>
+</html>

@@ -1,0 +1,9 @@
+status: &status
+  - name: 'Open'
+    value: 'open'
+  - name: 'Started'
+    value: 'started'
+  - name: 'Completed'
+    value: 'completed'
+  - name: 'Rejected'
+    value: 'rejected'
