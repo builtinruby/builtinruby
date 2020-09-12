@@ -3,23 +3,20 @@ layout: default
 title: Home
 ---
 
-<h1>Ultimas vagas</h1>
+<h2>Ultimas vagas</h2>
 
-<ul>
+<div class="list-group">
   {% for page in site.pages reversed %}
     {% if page.layout == 'jobs' %}
-      <li>
-        <h2>
-          <a class="btn btn-link" href="{{ page.url | prepend: site.baseurl }}" title="{{ page.title }}"
-            >{{ page.title }}</a
-          >
-        </h2>
-        <p>
-          {% if page.role %}
-          <span class="pill role">{{ page.role }}</span> @ {% endif %}
-          <span class="pill organization">{{ page.organization }}</span>
-        </p>
-      </li>
+      <a href="#" class="list-group-item list-group-item-action">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">{{ page.title }}</h5>
+          <small>{{ page.posted_at }}</small>
+        </div>
+        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+        <small>{{ page.role }} @ {{ page.organization }}</small>
+      </a>
     {% endif %}
   {% endfor %}
-</ul>
+</div>
+
