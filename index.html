@@ -8,7 +8,7 @@ title: Home
 <div class="list-group">
   {% for page in site.pages reversed %}
     {% if page.layout == 'jobs' %}
-      <a href="#" class="list-group-item list-group-item-action">
+      <a href="{{ page.url | prepend: site.baseurl }}" title="{{ page.title }}" class="list-group-item list-group-item-action">
         <div class="d-flex w-100 justify-content-between">
           <h5 class="mb-1">{{ page.title }}</h5>
           <small>{{ page.posted_at }}</small>
