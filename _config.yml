@@ -1,3 +1,26 @@
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-baseurl: "" # the subpath of your site, e.g. /blog
-title: "BuiltinRuby" # the name of your site, e.g. ACME Corp.
+# website
+lang: pt_BR
+title: 'Built in Ruby'
+author: Built in Ruby Team
+logo: https://avatars2.githubusercontent.com/u/71139505?s=200&v=4
+url: ''
+baseurl: ''
+# tagline:
+# description:
+
+plugins:
+  - jekyll-seo-tag
+
+# seo
+# https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
+# twitter:
+#   username: builtinruby
+#   card: summary
+# facebook:
+#   app_id: 1234
+#   publisher: 1234
+#   admins: 1234
+social:
+  name: Built in Ruby
+  links:
+    - https://github.com/BuiltinRuby
