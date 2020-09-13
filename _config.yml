@@ -9,6 +9,7 @@ baseurl: ''
 # description:
 
 plugins:
+  - jekyll-timeago
   - jekyll-seo-tag
 
 # seo
@@ -24,3 +25,11 @@ social:
   name: Built in Ruby
   links:
     - https://github.com/BuiltinRuby
+
+jekyll_timeago:
+  depth: 2
+  threshold: 0.05
+  translations_path: "/_locales/*.yaml"
+  default_locale: 'pt'
+  available_locales:
+    - 'pt'
