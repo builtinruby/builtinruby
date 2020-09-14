@@ -1,0 +1,12 @@
+.share-page {
+  font-weight: 700;
+
+  a {
+    font-weight: 300;
+    margin-left: 10px;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
