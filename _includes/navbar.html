@@ -1,34 +1,19 @@
-<div class="collapse bg-dark" id="navbarHeader">
+<div class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
-    <div class="row">
-      <div class="col-sm-8 col-md-7 py-4">
-        <h4 class="text-white">{{ site.title }}</h4>
-        <p class="text-muted">
-          Built in Ruby é um site criado pela comunidade e para a comunidade como uma tentativa de manter um ponto mais
-          central de divulgação de vagas e empresas que trabalham com a linguagem Ruby e tecnologias relacionadas.
-        </p>
-      </div>
-      <div class="col-sm-4 offset-md-1 py-4">
-        <h4 class="text-white">Menu</h4>
-        <ul class="list-unstyled">
-          <!-- li><a href="#" class="text-white">Publicar vaga</a></li -->
-          <li><a href="https://github.com/BuiltinRuby" class="text-white">Colabore!</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-
-<nav class="navbar navbar-dark bg-dark box-shadow">
-  <div class="container d-flex justify-content-between">
-    <a href="/" class="navbar-brand d-flex align-items-center">
-      <strong>
-        {{ site.title }}&nbsp;
-        <small style="font-size: 8px;color: #ffffff;" class="badge badge-light text-dark">beta</small>
-      </strong>
+    <a class="navbar-brand" href="/">
+      {{ site.title }}
+      <small style="font-size: 8px;" class="badge badge-light text-dark">beta</small>
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu"
+      aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    <div class="collapse navbar-collapse" id="navbarMenu">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="btn btn-outline-light" href="https://github.com/BuiltinRuby/builtinruby">Publicar vaga</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
