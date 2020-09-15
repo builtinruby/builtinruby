@@ -1,0 +1,25 @@
+---
+layout: none
+---
+
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>{{ site.name | xml_escape }}</title>
+		<description>{% if site.description %}{{ site.description | xml_escape }}{% endif %}</description>
+		<link>{{ site.url }}</link>
+		<atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml" />
+
+    {% for page in site.pages reversed limit:20 %}
+      {% if page.layout == 'jobs' %}
+        <item>
+          <title>{{ page.title | xml_escape }}</title>
+          <description>{{ page.content | truncate:150 | xml_escape }}</description>
+          <pubDate>{{ page.posted_at | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
+          <link>{{ site.url }}{{ page.url }}</link>
+          <guid isPermaLink="true">{{ site.url }}{{ page.url }}</guid>
+        </item>
+      {% endif %}
+    {% endfor %}
+	</channel>
+</rss>
