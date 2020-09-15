@@ -1,0 +1,7 @@
+<div class="list-group">
+  {% for page in site.pages reversed %}
+    {% if page.layout == 'jobs' %}
+      {% include jobs/item.html %}
+    {% endif %}
+  {% endfor %}
+</div>

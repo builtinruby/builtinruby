@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
   <head>
-    {% include head.html %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>{{ page.title }} - {{ site.title }}</title>
+
+    {% include site/social.html %}
+
+    <link rel="stylesheet" href="{{ "/assets/css/application.css" | relative_url }}">
   </head>
   <body>
     <header>
@@ -17,6 +23,8 @@
 
     </main>
 
-    {% include footer.html %}
+    {% include site/footer.html %}
+
+    {% include site/scripts.html %}
   </body>
 </html>
