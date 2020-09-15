@@ -8,6 +8,7 @@
     {% include site/social.html %}
 
     <link rel="stylesheet" href="{{ "/assets/css/application.css" | relative_url }}">
+    <script src="https://kit.fontawesome.com/ac647899b0.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <header>
@@ -15,55 +16,73 @@
     </header>
 
     <main role="main">
-      <div class="album py-5 bg-light">
+      <div class="py-5">
         <div class="container">
+          <div class="row">
+            <div class="col">
+              <h1 class="h2 mb-0">
+                {{ page.title  }} <br>
+                <small class="h5 lead">{{ page.role }} @ {{ page.company }}</small>
+              </h1>
+            </div>
+          </div>
 
-          <h1>
-            {{ page.title  }}
-          </h1>
-
-          <p>
-            <strong>Cargo</strong>
-            {{ page.role }}
-          </p>
-          <p>
-            <strong>Empresa</strong>
-            {{ page.organization }}
-          </p>
-          <p>
-            <strong>GitHub</strong>
-            {{ page.github }}
-          </p>
-          <p>
-            <strong>Contato</strong>
-            {{ page.contact }}
-          </p>
-          <p>
-            <strong>Website</strong>
-            {{ page.org_url }}
-          </p>
-          <p>
-            <strong>Tags</strong>
-            {{ page.tags }}
-          </p>
-          <p>
-            <strong>Status</strong>
-            {{ page.status }}
-          </p>
-          <p>
-            <strong>Faixa Salarial</strong>
-            {{ page.rate }}
-          </p>
-          <p>
-            <strong>Data da Publicação</strong>
-            {{ page.date_posted }}
-          </p>
-
-          <h2>Descrição</h2>
-          <p>{{ page.description }}</p>
-
-          <h2>Como se candidatar?</h2>
-          <p>{{ page.how_to_apply }}</p>
+          <div class="row mt-5">
+            <div class="col">
+              {{ content }}
+            </div>
+            <div class="col-md-3 col-sm-12">
+              <div class="card">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                    <i class="fas fa-clock"></i>
+                    <date class="timeago" title="{{ page.posted_at | date: "%d/%m/%Y" }}">{{ page.posted_at }}</date>
+                  </li>
+                  <li class="list-group-item">
+                    <strong><i class="fas fa-user-astronaut text-monospace"></i> Área de atuação</strong>
+                    <br>
+                    {{ page.role }}
+                  </li>
+                  <li class="list-group-item">
+                    <strong><i class="fas fa-user-friends text-monospace"></i> Nível</strong>
+                    <br>
+                    {{ page.level }}
+                  </li>
+                  <li class="list-group-item">
+                    <strong><i class="fas fa-chalkboard-teacher text-monospace"></i> Contratação</strong>
+                    <br>
+                    {{ page.employment_term }}
+                  </li>
+                  <li class="list-group-item">
+                    <strong><i class="fas fa-money-check-alt text-monospace"></i> Pretenção</strong>
+                    <br>
+                    {{ page.pay_rate }}
+                  </li>
+                  <li class="list-group-item">
+                    <strong><i class="fas fa-map-marker-alt text-monospace"></i> Local</strong>
+                    <br>
+                    {{ page.location }}
+                  </li>
+                  <li class="list-group-item">
+                    <strong><i class="fas fa-envelope-open-text text-monospace"></i> Contato</strong>
+                    <br>
+                    {{ page.contact }}
+                  </li>
+                  <li class="list-group-item">
+                    <strong><i class="fas fa-window-maximize text-monospace"></i> Site</strong>
+                    <br>
+                    <a href="{{ page.website }}" target="_blank">{{ page.website }}</a>
+                  </li>
+                  <li class="list-group-item">
+                    <i class="fas fa-tags text-monospace"></i>
+                    {% for tag in page.tags %}
+                      <span class="badge badge-danger">{{ tag }}</span>
+                    {% endfor %}
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
 
           {% include social/share_page.html %}
         </div>

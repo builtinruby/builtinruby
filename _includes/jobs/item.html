@@ -1,8 +1,7 @@
 <a href="{{ page.url | prepend: site.baseurl }}" title="{{ page.title }}" data-id={{ page._id }} class="list-group-item list-group-item-action mb-3">
   <div class="d-flex w-100 justify-content-between">
     <h5 class="mb-1">{{ page.title }}</h5>
-    <small><time>{{ page.posted_at | timeago }}</time></small>
+    <small><date title="{{ page.posted_at | date: "%d/%m/%Y" }}" class="timeago">{{ page.posted_at }}</date></small>
   </div>
-  <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-  <small>{{ page.role }} @ {{ page.organization }}</small>
+  <small>{{ page.role }} @ {{ page.company }}</small>
 </a>
