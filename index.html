@@ -3,7 +3,14 @@ layout: default
 title: Home
 ---
 
-<h2>Ultimas vagas</h2>
+<section id="last-jobs">
+  <h2>Ultimas vagas</h2>
 
-{% include jobs/last.html %}
+  {% include jobs/last.html %}
+</section>
 
+<section id="companies">
+  <h2 class="mt-2">Empresas</h2>
+
+  {% include companies/preview.html %}
+</section>
