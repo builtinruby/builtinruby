@@ -1,0 +1,15 @@
+---
+layout: default
+title: Empresas
+permalink: /companies/
+---
+
+<h2>Empresas</h2>
+
+<div class="list-group">
+  {% for page in site.pages reversed %}
+    {% if page.layout == 'companies' %}
+      {% include companies/item.html %}
+    {% endif %}
+  {% endfor %}
+</div>

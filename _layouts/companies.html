@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>{{ page.title }} - {{ site.title }}</title>
+
+    {% include site/social.html %}
+
+    <link rel="stylesheet" href="{{ "/assets/css/application.css" | relative_url }}">
+    <script src="https://kit.fontawesome.com/ac647899b0.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <header>
+      {% include navbar.html %}
+    </header>
+
+    <main role="main">
+      <div class="py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <h1 class="h2 mb-5">
+                {{ page.title  }} <br>
+                <small class="h5 lead">
+                  <i class="fas fa-map-marker-alt text-monospace"></i> {{ page.location }}
+                </small>
+              </h1>
+
+              {{ content }}
+
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <div class="card">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                    <strong class="job-item-description"><i class="fas fa-clock"></i> Fundada em</strong>
+                    <br />
+                    <date>{{ page.founded_at }}</date>
+                  </li>
+                  <li class="list-group-item">
+                    <strong class="job-item-description"><i class="fas fa-user-astronaut text-monospace"></i> Área de atuação</strong>
+                    <br>
+                    {{ page.category }}
+                  </li>
+                  <li class="list-group-item">
+                    <strong class="job-item-description"><i class="fas fa-blog text-monospace"></i> Blog</strong>
+                    <br>
+                    <a href="{{ page.blog }}" target="_blank">{{ page.blog }}</a>
+                  </li>
+                  <li class="list-group-item">
+                    <strong class="job-item-description"><i class="fab fa-linkedin text-monospace"></i> LinkedIn</strong>
+                    <br>
+                    <a href="https://www.linkedin.com/company/{{ page.linkedin }}/about/" target="_blank">@{{ page.linkedin }}</a>
+                  </li>
+                  <li class="list-group-item">
+                    <strong class="job-item-description"><i class="fab fa-github text-monospace"></i> GitHub</strong>
+                    <br>
+                    <a href="https://github.com/{{ page.github }}" target="_blank">@{{ page.github }}</a>
+                  </li>
+                  <li class="list-group-item">
+                    <strong class="job-item-description"><i class="fas fa-window-maximize text-monospace"></i> Site</strong>
+                    <br>
+                    <a href="{{ page.website }}" target="_blank">{{ page.website }}</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    {% include site/footer.html %}
+
+    {% include site/scripts.html %}
+  </body>
+</html>
