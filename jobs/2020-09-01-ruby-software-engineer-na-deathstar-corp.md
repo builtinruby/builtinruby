@@ -15,7 +15,7 @@ status: searching
 pay_rate: A combinar
 employment_term: CLT
 location: DeathStar
-posted_at: 2020-09-02T19:39:00
+posted_at: 2020-09-02
 tags:
   - ruby
   - rails

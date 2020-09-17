@@ -11,7 +11,7 @@ status: searching
 pay_rate: A combinar
 employment_term: CLT
 location: Gotham City
-posted_at: 2020-09-01T19:39:00
+posted_at: 2020-08-01
 tags:
   - ruby
   - rails
