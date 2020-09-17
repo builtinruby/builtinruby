@@ -1,0 +1,15 @@
+---
+layout: default
+title: Vagas
+permalink: /jobs/
+---
+
+<h2>Vagas</h2>
+
+<div class="list-group">
+  {% for page in site.pages reversed %}
+    {% if page.layout == 'jobs' %}
+      {% include jobs/item.html %}
+    {% endif %}
+  {% endfor %}
+</div>
