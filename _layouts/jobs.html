@@ -35,48 +35,50 @@
               <div class="card">
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item">
-                    <i class="fas fa-clock"></i>
+                    <strong class="job-item-description"><i class="fas fa-clock"></i> Vaga publicada</strong>
+                    <br />
                     <date class="timeago" title="{{ page.posted_at | date: "%d/%m/%Y" }}">{{ page.posted_at }}</date>
                   </li>
                   <li class="list-group-item">
-                    <strong><i class="fas fa-user-astronaut text-monospace"></i> Área de atuação</strong>
+                    <strong class="job-item-description"><i class="fas fa-user-astronaut text-monospace"></i> Área de atuação</strong>
                     <br>
                     {{ page.role }}
                   </li>
                   <li class="list-group-item">
-                    <strong><i class="fas fa-user-friends text-monospace"></i> Nível</strong>
+                    <strong class="job-item-description"><i class="fas fa-user-friends text-monospace"></i> Nível</strong>
                     <br>
                     {{ page.level }}
                   </li>
                   <li class="list-group-item">
-                    <strong><i class="fas fa-chalkboard-teacher text-monospace"></i> Contratação</strong>
+                    <strong class="job-item-description"><i class="fas fa-chalkboard-teacher text-monospace"></i> Contratação</strong>
                     <br>
                     {{ page.employment_term }}
                   </li>
                   <li class="list-group-item">
-                    <strong><i class="fas fa-money-check-alt text-monospace"></i> Pretenção</strong>
+                    <strong class="job-item-description"><i class="fas fa-money-check-alt text-monospace"></i> Pretenção</strong>
                     <br>
                     {{ page.pay_rate }}
                   </li>
                   <li class="list-group-item">
-                    <strong><i class="fas fa-map-marker-alt text-monospace"></i> Local</strong>
+                    <strong class="job-item-description"><i class="fas fa-map-marker-alt text-monospace"></i> Local</strong>
                     <br>
                     {{ page.location }}
                   </li>
                   <li class="list-group-item">
-                    <strong><i class="fas fa-envelope-open-text text-monospace"></i> Contato</strong>
+                    <strong class="job-item-description"><i class="fas fa-envelope-open-text text-monospace"></i> Contato</strong>
                     <br>
                     {{ page.contact }}
                   </li>
                   <li class="list-group-item">
-                    <strong><i class="fas fa-window-maximize text-monospace"></i> Site</strong>
+                    <strong class="job-item-description"><i class="fas fa-window-maximize text-monospace"></i> Site</strong>
                     <br>
                     <a href="{{ page.website }}" target="_blank">{{ page.website }}</a>
                   </li>
                   <li class="list-group-item">
-                    <i class="fas fa-tags text-monospace"></i>
+                    <strong class="job-item-description"><i class="fas fa-tags text-monospace"></i> Tags</strong>
+                    <br />
                     {% for tag in page.tags %}
-                      <span class="badge badge-danger">{{ tag }}</span>
+                      <span class="badge badge-danger job-tags">{{ tag }}</span>
                     {% endfor %}
                   </li>
                 </ul>
