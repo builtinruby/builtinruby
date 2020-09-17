@@ -1,4 +1,9 @@
+const timeagoSetup = () => {
+  const { DateTime } = luxon;
 
-
-timeago.render(document.querySelectorAll('.timeago'), 'pt_BR');
-
+  const elements = document.querySelectorAll('.timeago');
+  elements.forEach((item) => {
+    const dateValue = item.innerText;
+    item.innerText = DateTime.fromISO(dateValue).setLocale('pt').toRelativeCalendar();
+  });
+};
