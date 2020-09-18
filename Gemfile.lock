@@ -7,6 +7,7 @@ GEM
     babel-transpiler (0.7.0)
       babel-source (>= 4.0, < 6)
       execjs (~> 2.0)
+    backports (3.18.2)
     colorator (1.1.0)
     concurrent-ruby (1.1.7)
     em-websocket (0.5.1)
@@ -34,6 +35,10 @@ GEM
       rouge (~> 3.0)
       safe_yaml (~> 1.0)
       terminal-table (~> 1.8)
+    jekyll-admin (0.10.2)
+      jekyll (>= 3.7, < 5.0)
+      sinatra (~> 1.4)
+      sinatra-contrib (~> 1.4)
     jekyll-babel (1.1.0)
       babel-transpiler
     jekyll-feed (0.15.0)
@@ -42,8 +47,6 @@ GEM
       sassc (> 2.0.1, < 3.0)
     jekyll-seo-tag (2.6.1)
       jekyll (>= 3.3, < 5.0)
-    jekyll-timeago (0.13.1)
-      mini_i18n (>= 0.8.0)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
     kramdown (2.3.0)
@@ -55,10 +58,15 @@ GEM
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     mercenary (0.4.0)
-    mini_i18n (0.8.0)
+    multi_json (1.15.0)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
     public_suffix (4.0.6)
+    rack (1.6.13)
+    rack-protection (1.5.5)
+      rack
+    rack-test (1.1.0)
+      rack (>= 1.0, < 3)
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
@@ -67,8 +75,20 @@ GEM
     safe_yaml (1.0.5)
     sassc (2.4.0)
       ffi (~> 1.9)
+    sinatra (1.4.8)
+      rack (~> 1.5)
+      rack-protection (~> 1.4)
+      tilt (>= 1.3, < 3)
+    sinatra-contrib (1.4.7)
+      backports (>= 2.0)
+      multi_json
+      rack-protection
+      rack-test
+      sinatra (~> 1.4.0)
+      tilt (>= 1.3, < 3)
     terminal-table (1.8.0)
       unicode-display_width (~> 1.1, >= 1.1.1)
+    tilt (2.0.10)
     unicode-display_width (1.7.0)
 
 PLATFORMS
@@ -76,10 +96,10 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll (~> 4.1.1)
+  jekyll-admin
   jekyll-babel
   jekyll-feed (~> 0.12)
   jekyll-seo-tag
-  jekyll-timeago
   tzinfo (~> 1.2)
   tzinfo-data
   wdm (~> 0.1.1)
