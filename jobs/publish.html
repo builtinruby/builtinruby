@@ -1,0 +1,205 @@
+---
+layout: default
+title: Publicar Vaga
+permalink: /jobs/publish
+---
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/tail.writer@0.4.1/css/tail.writer-github.min.css"
+  type="text/css"
+/>
+
+<section id="job-publish">
+  <h1>Publicar Vaga</h1>
+
+  <div class="alert alert-info">
+    <p>
+      Se você esta aqui, está em busca de encontrar profissionais que trabalham com o maravilhoso
+      ecosistema e comunidade da linguagem Ruby.
+    </p>
+    <p>
+      Então basta preencher os campos abaixo para deixar todos sabendo das excelentes vagas que
+      estão em aberto na sua empresa
+    </p>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <form id="job-publish-form">
+        <div class="form-group">
+          <label>Empresa</label>
+          <select id="company" name="company" class="form-control">
+            <option>Selecione uma empresa</option>
+            {% for page in site.pages reversed %}
+              {% if page.layout == 'companies' %}
+                <option>{{ page.title }}</option>
+              {% endif %}
+            {% endfor %}
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="">Cargo</label>
+          <input id="role" name="role" class="form-control" type="text" />
+        </div>
+
+        <div class="form-group">
+          <label for="">Nível de Conhecimento</label>
+          <select id="level" name="level" class="form-control">
+            <option>Estagiário</option>
+            <option>Junior</option>
+            <option>Pleno</option>
+            <option>Senior</option>
+            <option>Especialista</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="">Local</label>
+          <input id="location" name="location" class="form-control" type="text" />
+        </div>
+
+        <div class="form-group">
+          <label for="">Forma de Contratação</label>
+          <select id="employment_term" name="employment_term" class="form-control">
+            <option>CLT</option>
+            <option>PJ</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="">Média Salário</label>
+          <input
+            id="pay_rate"
+            name="pay_rate"
+            class="form-control"
+            type="text"
+            placeholder="A combinar"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="">Website</label>
+          <input
+            id="website"
+            name="website"
+            class="form-control"
+            type="text"
+            placeholder="https://minha-empresa.com.br"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="">Tags</label>
+          <input
+            id="tags"
+            name="tags"
+            class="form-control"
+            type="text"
+            placeholder="ruby; rails; postgresql"
+          />
+        </div>
+
+        <div class="form-group">
+          <h3>Descrição da Vaga</h3>
+          <textarea name="description" rows="8" cols="40" class="form-control"></textarea>
+        </div>
+
+        <div class="form-group">
+          <h3>Requisitos</h3>
+          <textarea name="requirements" rows="8" cols="40" class="form-control"></textarea>
+        </div>
+
+        <div class="form-group">
+          <h3>Benefícios</h3>
+          <textarea name="benefits" rows="8" cols="40" class="form-control"></textarea>
+        </div>
+
+        <div class="form-group">
+          <h3>Como se candidatar?</h3>
+          <textarea name="how_to_apply" rows="8" cols="40" class="form-control"></textarea>
+        </div>
+
+        <div class="form-group form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+          <label class="form-check-label" for="exampleCheck1"
+            >Declaro ser responsável por todas as informações que preenchi neste formulário.</label
+          >
+        </div>
+        <button type="submit" class="btn btn-dark">Avançar</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script charset="utf-8">
+  document.addEventListener('DOMContentLoaded', function () {
+    const { DateTime } = luxon;
+
+    tail.writer('textarea');
+
+    const form = document.getElementById('job-publish-form');
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const {
+        role,
+        company,
+        level,
+        location,
+        employment_term,
+        pay_rate,
+        website,
+        description,
+        requirements,
+        benefits,
+        how_to_apply,
+      } = form;
+
+      const tags = form.tags.value.split(';');
+
+      const title = `${role.value} na ${company.value}`;
+      const body = `
+\`\`\`
+---
+_id: ${uuidv4()}
+layout: jobs
+posted_at: ${DateTime.local().toISODate()}
+title: ${title}
+company: ${company.value}
+role: ${role.value}
+level: ${level.value}
+location: ${location.value}
+employment_term: ${employment_term.value}
+pay_rate: ${pay_rate.value}
+website: ${website.value}
+status: searching
+tags:
+  - ${tags.join('\n  - ')}
+---
+
+## Descrição da Vaga
+
+${description.value}
+
+## Requisitos
+
+${requirements.value}
+
+## Benefícios
+
+${benefits.value}
+
+## Como se candidatar?
+
+${how_to_apply.value}
+\`\`\`
+      `;
+
+      document.location.href = `https://github.com/builtinruby/builtinruby/issues/new?title=${encodeURI(
+        title,
+      )}&labels=job-publish&assignees=ThePublisherBot&body=${encodeURI(body).replace(/#/g, '%23')}`;
+    });
+  });
+</script>
