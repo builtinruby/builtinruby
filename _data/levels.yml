@@ -1,0 +1,6 @@
+levels: &levels
+  - Estagiária(o)
+  - Junior
+  - Pleno
+  - Senior
+  - Especialista

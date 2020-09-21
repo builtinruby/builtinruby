@@ -1,0 +1,6 @@
+<datalist id="ds-companies">
+  <option value="option">option</option>
+  {% for page in site.pages reversed %} {% if page.layout == 'companies' %}
+  <option value="{{ page.title }}" />
+  {% endif %} {% endfor %}
+</datalist>
