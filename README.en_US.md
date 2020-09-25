@@ -70,3 +70,6 @@ Therefore, before publishing a job opportunity, be sure with the company that yo
 ## License
 
 [MIT](./LICENSE)
+
+
+![GitHub Projeto Footer](./github-footer.png)

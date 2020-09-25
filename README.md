@@ -66,9 +66,9 @@ As informações publicadas no portal são de uso comum de toda a comunidade e a
 Por tanto, antes de publicar uma vaga, se certifique junto a empresa que você tem autorização dela.
 
 
-
-
-
 ## Licença
 
 [MIT](./LICENSE)
+
+
+![GitHub Projeto Footer](./github-footer.png)
