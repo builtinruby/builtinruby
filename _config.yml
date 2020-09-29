@@ -1,13 +1,18 @@
 # website
 lang: pt_BR
 title: 'Built in Ruby'
-author: Built in Ruby Team
+author: Built in Ruby Team - https://github.com/builtinruby/builtinruby
 logo: https://avatars2.githubusercontent.com/u/71139505?s=200&v=4
 url: ''
 baseurl: ''
 # tagline:
 # description:
 
+# api and service resources
+resources:
+  api: http://builtinruby-api.herokuapp.com
+
+# plugins
 plugins:
   - jekyll-seo-tag
   - jekyll-babel
@@ -15,13 +20,13 @@ plugins:
 
 # seo
 # https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
-# twitter:
-#   username: builtinruby
-#   card: summary
 # facebook:
 #   app_id: 1234
 #   publisher: 1234
 #   admins: 1234
+twitter:
+  username: builtinruby
+  card: summary
 social:
   name: Built in Ruby
   links:

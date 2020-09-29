@@ -48,70 +48,19 @@ class JobPublishController extends BaseController {
     };
   }
 
-  githubNewIssuePath(params = {}) {
-    const { title, body } = {
-      title: encodeURI(params.title),
-      body: encodeURI(params.body).replace(/#/g, '%23')
-    };
-
-    return `https://github.com/builtinruby/builtinruby/issues/new?title=${title}&labels=job-publish&assignees=ThePublisherBot&body=${body}`;
-  }
-
-  renderJobTemplate(params = {}) {
-    return `
-\`\`\`
----
-_id: ${params._id}
-layout: jobs
-posted_at: ${params.postedAt}
-title: ${params.title}
-company: ${params.company}
-role: ${params.role}
-level: ${params.level}
-location: ${params.location}
-employment_term: ${params.employment_term}
-pay_rate: ${params.pay_rate}
-website: ${params.website}
-status: searching
-tags:
-  - ${params.tags.join('\n  - ')}
----
-
-## Descrição da Vaga
-
-${params.description}
-
-## Requisitos
-
-${params.requirements}
-
-## Benefícios
-
-${params.benefits}
-
-## Como se candidatar?
-
-${params.how_to_apply}
-\`\`\`
-    `;
-  }
-
   onSubmit(event) {
     event.preventDefault();
-    const { DateTime } = luxon;
 
     const params = this.getJobParams();
-    console.log(params);
-
     const title = `${params.role} na ${params.company}`;
-    const body = this.renderJobTemplate({
-      _id: uuidv4(),
-      postedAt: DateTime.local().toISODate(),
-      title,
-      ...params
-    });
 
-    document.location.href = this.githubNewIssuePath({ title, body });
+    axios.post(`${App.config.resource}/jobs`, { ...params, title })
+      .then((response) => {
+        alert('Sua vaga foi registrada com sucesso... muito obrigado!');
+      })
+      .catch((error) => {
+        alert('Não foi possível cadastrar sua vaga! =(');
+      });
   }
 }
 

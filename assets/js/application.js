@@ -5,6 +5,7 @@ const global = window;
 const App = global.App || {
   config: {
     debug: true,
+    resource: '{{ site.resources.api }}',
   }
 };
 
