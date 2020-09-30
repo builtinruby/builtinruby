@@ -54,7 +54,12 @@ class JobPublishController extends BaseController {
     const params = this.getJobParams();
     const title = `${params.role} na ${params.company}`;
 
-    axios.post(`${App.config.resource}/jobs`, { ...params, title })
+    axios({
+      method: 'post',
+      url: `${App.config.resource}/jobs`,
+      data: { ...params, title },
+      withCredentials: true,
+    })
       .then((response) => {
         alert('Sua vaga foi registrada com sucesso... muito obrigado!');
       })
