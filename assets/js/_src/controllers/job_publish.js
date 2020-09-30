@@ -56,7 +56,7 @@ class JobPublishController extends BaseController {
 
     axios({
       method: 'post',
-      url: `${App.config.resource}/jobs`,
+      url: `${App.config.resource}/api/v1/jobs`,
       data: { ...params, title },
       withCredentials: true,
     })
