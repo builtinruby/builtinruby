@@ -10,7 +10,7 @@ baseurl: ''
 
 # api and service resources
 resources:
-  api: http://builtinruby-api.herokuapp.com
+  api: //builtinruby-api.herokuapp.com
 
 # plugins
 plugins:
