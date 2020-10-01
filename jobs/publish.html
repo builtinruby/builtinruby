@@ -57,7 +57,8 @@ permalink: /jobs/publish
 
   <div class="row">
     <div class="col">
-      <form id="job-publish-form">
+      <form id="job-publish-form" action="https://builtinruby-api.herokuapp.com/api/v1/jobs" charset="UTF-8"
+        data-remote="true" method="post">
         <div class="form-group">
           <label for="company">Empresa</label>
           <input
@@ -162,7 +163,7 @@ permalink: /jobs/publish
           <label for="tags">Tags</label>
           <input
             id="tags"
-            name="tags"
+            name="tags[]"
             class="form-control"
             type="text"
             placeholder="ruby; rails; postgresql"
@@ -197,12 +198,14 @@ permalink: /jobs/publish
           Preenchendo e submetendo estas informações você esta de acordo em se torna responsável
           pelas mesmas e aceita compartilhar estas informações publicamente.
         </div>
-        <button type="submit" class="btn btn-dark">Avançar</button>
+        <button type="submit" class="btn btn-dark" data-disable-with="Publicando...">Publicar Vaga</button>
       </form>
     </div>
   </div>
 </section>
 
 <!-- datalists -->
-{% include datalists/companies.html %} {% include datalists/compensations.html %} {% include
-datalists/locations.html %} {% include datalists/roles.html %}
+{% include datalists/companies.html %}
+{% include datalists/compensations.html %}
+{% include datalists/locations.html %}
+{% include datalists/roles.html %}

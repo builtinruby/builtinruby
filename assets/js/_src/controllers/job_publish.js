@@ -3,7 +3,15 @@ class JobPublishController extends BaseController {
     this.onMount();
 
     this.form = document.getElementById('job-publish-form');
-    this.form.addEventListener('submit', this.onSubmit.bind(this));
+    this.form.addEventListener('ajax:success', function(event) {
+      alert('Obrigado! Sua vaga foi enviada e estará publicada em alguns instantes!');
+      console.log(event);
+    });
+
+    this.form.addEventListener('ajax:error', function(event) {
+      alert('Não conseguimos publicar a sua vaga... desculpe!');
+      console.error(event);
+    });
   }
 
   onMount() {
@@ -26,46 +34,6 @@ class JobPublishController extends BaseController {
       tooltip: "top",
       width: "100%"
     });
-  }
-
-  getJobParams() {
-    const form = this.form;
-    // const tagList = form.tags.value.split(';');
-
-    return {
-      role: form.role.value || '',
-      company: form.company.value || '',
-      level: form.level.value || '',
-      location: form.location.value || '',
-      employment_term: form.employment_term.value || '',
-      pay_rate: form.pay_rate.value || '',
-      website: form.website.value || '',
-      tags: form.tags.value.split(/\s*;\s*/),
-      description: form.description.value || '',
-      requirements: form.requirements.value || '',
-      benefits: form.benefits.value || '',
-      how_to_apply: form.how_to_apply.value || '',
-    };
-  }
-
-  onSubmit(event) {
-    event.preventDefault();
-
-    const params = this.getJobParams();
-    const title = `${params.role} na ${params.company}`;
-
-    axios({
-      method: 'post',
-      url: `${App.config.resource}/api/v1/jobs`,
-      data: { ...params, title },
-      withCredentials: true,
-    })
-      .then((response) => {
-        alert('Sua vaga foi registrada com sucesso... muito obrigado!');
-      })
-      .catch((error) => {
-        alert('Não foi possível cadastrar sua vaga! =(');
-      });
   }
 }
 
