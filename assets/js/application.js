@@ -12,7 +12,7 @@ const App = global.App || {
 {% include_relative _src/initializers.js %}
 {% include_relative _src/controllers.js %}
 
-window.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('turbolinks:load', () => {
   App.setup()
 
   try {

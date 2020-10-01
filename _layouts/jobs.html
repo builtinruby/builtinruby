@@ -9,6 +9,8 @@
 
     <link rel="stylesheet" href="{{ "/assets/css/application.css" | relative_url }}">
     <script src="https://kit.fontawesome.com/ac647899b0.js" crossorigin="anonymous"></script>
+
+    {% include site/scripts.html %}
   </head>
   <body data-controller="{{ page.controller }}">
     <header>
@@ -92,7 +94,5 @@
     </main>
 
     {% include site/footer.html %}
-
-    {% include site/scripts.html %}
   </body>
 </html>
