@@ -16,7 +16,15 @@ resources:
 plugins:
   - jekyll-seo-tag
   - jekyll-babel
-  - jekyll-admin
+  - jekyll-algolia
+
+# algolia search plugin configs
+algolia:
+  index_name: jobs_search_index
+  application_id: 2H0TE041E3
+  search_only_api_key: 908b56ce046fc3a00aca2a4d43bf0b31
+  extensions_to_index:
+    - md
 
 # seo
 # https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md

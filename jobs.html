@@ -1,12 +1,16 @@
 ---
 layout: default
 title: Vagas
+controller: jobs#search
 permalink: /jobs/
 ---
 
+
 <h2>Vagas</h2>
 
-<div class="list-group">
+<div id="search-searchbar"></div>
+
+<div class="list-group" id="search-hits">
   {% for page in site.pages reversed %}
     {% if page.layout == 'jobs' %}
       {% include jobs/item.html %}

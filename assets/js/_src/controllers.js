@@ -27,3 +27,4 @@ App.Controllers = {
 };
 
 {% include_relative _src/controllers/job_publish.js %}
+{% include_relative _src/controllers/job_search.js %}
