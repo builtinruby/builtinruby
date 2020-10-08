@@ -1,0 +1,183 @@
+---
+layout: default
+title: Cadastro de Empresa
+controller: companies#publish
+permalink: /companies/publish
+---
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/tail.writer@0.4.1/css/tail.writer-github.min.css"
+  type="text/css"
+/>
+
+<section id="job-publish">
+  <h1>Cadastrar Empresa</h1>
+
+  <div class="row">
+    <div class="col">
+      <form id="company-publish-form" action="https://builtinruby-api.herokuapp.com/api/v1/companies" charset="UTF-8"
+        data-remote="true" method="post">
+        <div class="form-group">
+          <label for="title">Nome da Empresa</label>
+          <input
+            type="text"
+            id="title"
+            name="title"
+            class="form-control"
+            placeholder="Wayne Corp"
+            autocomplete="off"
+            required
+          />
+        </div>
+
+        <div class="row">
+          <div class="form-group col-8">
+            <label for="category">Área de Atuação</label>
+            <input
+              id="category"
+              name="category"
+              class="form-control typeahead"
+              type="text"
+              placeholder="Desenvolvimento de Software"
+              autocomplete="off"
+              list="ds-category"
+              required
+            />
+            <small class="form-text text-muted"
+              >Preencha a área de atividade da empresa, exemplo:
+              <code>Desenvolvimento de Software</code>, <code>Logística</code>, <code>Fintech</code>...
+            </small
+            >
+          </div>
+
+          <div class="form-group col-4">
+            <label for="founded_at">Ano de Fundação</label>
+            <input type="number" id="founded_at" name="founded_at" placeholder="2011" size="4" step="1" min="1900" max="2020"
+            class="form-control" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="location">Onde a empresa fica?</label>
+          <div class="input-group flex-nowrap">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="addon-wrapping">
+                <i class="fas fa-map-marker-alt"></i>
+              </span>
+            </div>
+            <input
+              id="location"
+              name="location"
+              class="form-control"
+              type="text"
+              autocomplete="off"
+              placeholder="Gotham City"
+              list="ds-locations"
+            />
+          </div>
+          <small class="form-text text-muted"
+            >Preencha o local onde a sede da empresa fica localizada (ex:
+            <code>Vila Olímpia - São Paulo</code>).</small>
+        </div>
+
+        <div class="row">
+          <div class="form-group col-6">
+            <label for="website">Website</label>
+            <input
+              id="website"
+              name="website"
+              class="form-control"
+              type="url"
+              placeholder="https://empresa.com.br"
+            />
+            <small class="form-text text-muted"
+              >Preencha o site da sua empresa com <code>http://</code> ou <code>https://</code> na
+              frente.
+            </small>
+          </div>
+
+          <div class="form-group col-6">
+            <label for="blog">Blog da empresa</label>
+            <input
+              id="blog"
+              name="blog"
+              class="form-control"
+              type="url"
+              placeholder="https://blog.empresa.com.br"
+            />
+            <small class="form-text text-muted"
+              >Preencha o endereço do blog da sua empresa com <code>http://</code> ou <code>https://</code> na
+              frente.
+            </small>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group col-6">
+            <label for="github">GitHub (username)</label>
+            <div class="input-group flex-nowrap">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="addon-wrapping">
+                  <i class="fab fa-github"></i>
+                </span>
+              </div>
+              <input
+                id="github"
+                name="github"
+                class="form-control"
+                type="text"
+                placeholder="builtinruby"
+              />
+            </div>
+            <small class="form-text text-muted"
+                   >Digite apenas o username da sua empresa no GitHub, ex: https://github.com/<code>builtinruby</code>,
+                   https://github.com/<code>google</code>
+            </small>
+          </div>
+
+          <div class="form-group col-6">
+            <label for="linkedin">LinkedIn (username)</label>
+            <div class="input-group flex-nowrap">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="addon-wrapping">
+                  <i class="fab fa-linkedin"></i>
+                </span>
+              </div>
+              <input
+                id="linkedin"
+                name="linkedin"
+                class="form-control"
+                type="url"
+                placeholder="builtinruby"
+              />
+            </div>
+            <small class="form-text text-muted"
+                   >Digite apenas o username da sua empresa no LinkedIn, ex:
+                   https://www.linkedin.com/company/<code>google</code>/
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <h3>Fale um pouco sobre a empresa</h3>
+          <textarea name="description" rows="8" cols="40" class="form-control"></textarea>
+        </div>
+
+        <div class="form-group">
+          Preenchendo e submetendo estas informações você esta de acordo em se torna responsável
+          pelas mesmas e aceita compartilhar estas informações publicamente.
+        </div>
+        <button type="submit" class="btn btn-dark" data-disable-with="Cadastrando...">Cadastrar Empresa</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- datalists -->
+{% include datalists/companies.html %}
+{% include datalists/compensations.html %}
+{% include datalists/locations.html %}
+{% include datalists/roles.html %}
