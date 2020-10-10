@@ -4,4 +4,9 @@
     <small><date title="{{ page.posted_at | date: "%d/%m/%Y" }}" class="timeago">{{ page.posted_at }}</date></small>
   </div>
   <small>{{ page.role }} @ {{ page.company }}</small>
+  <div>
+    {% for tag in page.tags %}
+      <span class="badge badge-secondary">{{ tag }}</span>
+    {% endfor %}
+  </div>
 </a>
