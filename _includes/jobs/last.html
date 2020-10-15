@@ -1,7 +1,14 @@
 <div class="list-group">
-  {% for page in site.pages reversed %}
+  {% assign jobs = site.pages | where: 'layout', 'jobs' | reverse %}
+  {% for page in jobs limit:6 %}
     {% if page.layout == 'jobs' %}
       {% include jobs/item.html %}
     {% endif %}
   {% endfor %}
+</div>
+
+<div class="row mt-2">
+  <div class="col text-right">
+    <a class="btn btn-link" href="/jobs">Veja todas as vagas</a>
+  </div>
 </div>
