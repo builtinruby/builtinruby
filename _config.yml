@@ -12,6 +12,15 @@ baseurl: ''
 resources:
   api: //builtinruby-api.herokuapp.com
 
+# collections
+collections:
+  jobs:
+    output: true
+    permalink: /jobs/:name
+  companies:
+    output: true
+    permalink: /companies/:name
+
 # plugins
 plugins:
   - jekyll-seo-tag
