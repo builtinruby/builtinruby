@@ -31,6 +31,32 @@
 
               {{ content }}
 
+              <div class="row">
+                <h4>
+                  Vagas publicadas pela empresa
+                </h4>
+              </div>
+              <div class="row">
+                <div class="col">
+                  {% assign jobs = site.jobs | where: 'company', page.title | reverse %}
+                  {% if jobs %}
+                    {% for job in jobs %}
+                      <a href="{{ job.url | prepend: site.baseurl }}" title="{{ job.title }}" data-id={{ job._id }} class="list-group-item list-group-item-action mb-3">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">{{ job.title }}</h5>
+                          <small><date title="{{ job.posted_at | date: "%d/%m/%Y" }}" class="timeago">{{ job.posted_at }}</date></small>
+                        </div>
+                        <small>{{ job.role }} @ {{ job.company }}</small>
+                        <div>
+                          {% for tag in job.tags %}
+                            <span class="badge badge-secondary">{{ tag }}</span>
+                          {% endfor %}
+                        </div>
+                      </a>
+                    {% endfor %}
+                  {% endif %}
+                </div>
+              </div>
             </div>
             <div class="col-md-4 col-sm-12">
               <div class="card">
