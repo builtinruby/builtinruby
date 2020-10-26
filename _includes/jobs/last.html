@@ -1,9 +1,7 @@
 <div class="list-group">
-  {% assign jobs = site.pages | where: 'layout', 'jobs' | reverse %}
-  {% for page in jobs limit:6 %}
-    {% if page.layout == 'jobs' %}
-      {% include jobs/item.html %}
-    {% endif %}
+  {% assign jobs = site.jobs | where: 'layout', 'jobs' | reverse %}
+  {% for page in jobs limit: 6 %}
+    {% include jobs/item.html %}
   {% endfor %}
 </div>
 

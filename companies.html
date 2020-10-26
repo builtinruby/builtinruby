@@ -17,9 +17,8 @@ permalink: /companies/
 </div>
 
 <div class="list-group">
-  {% for page in site.pages reversed %}
-    {% if page.layout == 'companies' %}
-      {% include companies/item.html %}
-    {% endif %}
+  {% assign companies = site.companies | where: 'layout', 'companies' | reverse %}
+  {% for page in companies limit: 6 %}
+    {% include companies/item.html %}
   {% endfor %}
 </div>
