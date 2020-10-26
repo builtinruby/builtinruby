@@ -25,7 +25,15 @@ collections:
 plugins:
   - jekyll-seo-tag
   - jekyll-babel
-  - jekyll-admin
+  - jekyll-analytics
+
+
+# analytics
+jekyll_analytics:
+  GoogleAnalytics:
+    id: UA-180902037-1
+    anonymizeIp: true
+
 
 # seo
 # https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
