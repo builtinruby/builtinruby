@@ -1,3 +1,8 @@
+{% assign company = site.companies | where: 'title', page.company | first %}
+{% capture company_link %}
+  <a href="{{ company.url }}">{{ company.title }}</a>
+{% endcapture %}
+
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
   <head>
@@ -24,7 +29,7 @@
             <div class="col">
               <h1 class="h2 mb-0">
                 {{ page.title  }} <br>
-                <small class="h5 lead">{{ page.role }} @ {{ page.company }}</small>
+                <small class="h5 lead">{{ page.role }} @ {{ company_link | default: page.company }}</small>
               </h1>
             </div>
           </div>
