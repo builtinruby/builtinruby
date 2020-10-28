@@ -1,7 +1,12 @@
-<div class="list-group">
-  {% for page in site.pages reversed %}
-    {% if page.layout == 'companies' %}
-      {% include companies/item.html %}
-    {% endif %}
+<div class="list-group list-group-horizontal">
+  {% assign companies = site.companies | where: 'layout', 'companies' | reverse %}
+  {% for page in companies limit: 6 %}
+    {% include companies/item.html %}
   {% endfor %}
+</div>
+
+<div class="row mt-2">
+  <div class="col text-right">
+    <a class="btn btn-link" href="/companies">Veja mais empresas</a>
+  </div>
 </div>
