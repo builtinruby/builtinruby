@@ -12,7 +12,9 @@ pay_rate:
 website: https://resultadosdigitais.com.br/
 status: searching
 tags:
-  - ruby; rails; DDD
+  - ruby
+  - rails
+  - DDD
 ---
 
 ## Descrição da Vaga
