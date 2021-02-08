@@ -3,13 +3,13 @@ _id: 340af921-c73f-4509-ad04-3fbd34c271de
 layout: jobs
 posted_at: 2020-10-01
 title: Software Developer, Billing & Payments na Resultados Digitais
-company: Resultados Digitais
+company: RD Station
 role: Software Developer, Billing & Payments
 level: Senior
 location: Remoto (Florianópolis)
 employment_term: CLT
 pay_rate: A combinar
-website: https://resultadosdigitais.com.br
+website: https://rdstation.com
 status: searching
 tags:
   - ruby

@@ -3,13 +3,13 @@ _id: 8d42d128-88c2-40a2-b374-6b00586f2811
 layout: jobs
 posted_at: 2020-09-15
 title: Desenvolvedora de Software Sênior
-company: Resultados Digitais
+company: RD Station
 role: Software Developer
 level: Sênior  # Júnior Pleno Sênior Especialista
 location: Remoto (Florianópolis)
 employment_term: CLT # CLT PJ Freelancer Estágio
 pay_rate: A combinar
-website: https://resultadosdigitais.com.br
+website: https://www.rdstation.com
 status: searching
 tags:
   - ruby

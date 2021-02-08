@@ -3,13 +3,13 @@ _id: 3f3b8a8b-2021-449d-b344-a0e96d23d78d
 layout: jobs
 posted_at: 2020-10-01
 title: Ruby Software Developer, CRM na Resultados Digitais
-company: Resultados Digitais
+company: RD Station
 role: Ruby Software Developer, CRM
 level: Senior
 location: Remoto (Florianópolis)
 employment_term: CLT
 pay_rate: A combinar
-website: https://resultadosdigitais.com.br
+website: https://rdstation.com
 status: searching
 tags:
   - ruby

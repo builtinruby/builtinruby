@@ -3,13 +3,13 @@ _id: 793880fb-f358-4901-b3e5-0c46cdf1d1fb
 layout: jobs
 posted_at: 2020-10-08
 title: Software Developer, RD Station AppStore na Resultados Digitais
-company: Resultados Digitais
+company: RD Station
 role: Software Developer, RD Station AppStore
 level: Estagiária(o)
 location: Remoto
 employment_term: CLT
 pay_rate: 
-website: https://resultadosdigitais.com.br/
+website: https://rdstation.com
 status: searching
 tags:
   - ruby
